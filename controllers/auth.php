@@ -6,9 +6,9 @@ function auth_login() {
     if (isPostRequest()) {
         $postData = postData();
         if (model('user')->authLogin($postData)) {
-            redirect('/moneylover/index.php?c=payment&m=list');
+            redirect('/index.php?c=blog&m=list');
         } else {
-            $data['error'] = 'Login failed ! Please try again !';
+            $data['error'] = 'Login failed! Please try again!';
         }
     }
     
@@ -22,10 +22,11 @@ function auth_register() {
     
     if (isPostRequest()) {
         $postData = postData();
+
         if (model('user')->authRegister($postData)) {
-            redirect('/moneylover/index.php?c=payment&m=list');
+            redirect('/index.php?c=blog&m=list');
         } else {
-            $data['error'] = 'Register failed ! Email exists ! Please try again !';
+            $data['error'] = 'Register failed! Email exists! Please try again!';
             $data['postData'] = $postData;
         }
     }
@@ -35,5 +36,5 @@ function auth_register() {
 
 function auth_logout() {
     model('user')->authLogout();
-    redirect('/moneylover/index.php?c=auth&m=login');
+    redirect('/index.php?c=auth&m=login');
 }
