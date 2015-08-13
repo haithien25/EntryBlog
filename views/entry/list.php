@@ -2,7 +2,7 @@
 <p>
     <a href="index.php?c=blog&m=add" class="btn btn-primary">Thêm bài viết mới</a>
 </p>
-<table class="table table-bordered">
+<table class="table table-striped">
     <tr>
         <th>#</th>
         <th>Tiêu đề</th>

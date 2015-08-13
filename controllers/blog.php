@@ -20,9 +20,7 @@ function blog_add() {
     if (isPostRequest()) {
         $postData = postData();
         $currentUser = isLogged();
-        $data['error']=$postData['content'];
         if (model('entry')->addToUser($postData, $currentUser['id'])) {
-            $data['error']='Vo day roi ne!';
             redirect('/index.php?c=blog&m=list');
         }
     }
@@ -40,8 +38,15 @@ function blog_listpublic(){
 
 function blog_single(){
     $dara=array();
-    $entry_id=1;
-    $data['single']=model('entry')->getSingle($entry_id);
+    $data['single']=model('entry')->getSingle($_GET['entry']);
+    
+    if (isPostRequest()) {
+        $postData = postData();
+        if (model('comment')->addToEntry($postData, $_GET['entry'])) {
+            redirect('/index.php?c=blog&m=single&entry='.$_GET['entry']);
+        }
+    }
+    $data['comments'] = model('comment')->getAllByEntryId($_GET['entry']);
 
     $data['template_file'] = 'entry/public_single.php';
     render('layout.php', $data);

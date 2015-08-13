@@ -1179,7 +1179,7 @@ table th[class*="span"],
   background-color: #c4e3f3;
 }
 form {
-  margin: 0 0 20px;
+  margin: 0 0 0;
 }
 fieldset {
   padding: 0;
@@ -4457,7 +4457,7 @@ a.thumbnail:focus {
 .hero-unit {
   padding: 30px;
   margin-bottom: 30px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 200;
   line-height: 30px;
   color: inherit;
