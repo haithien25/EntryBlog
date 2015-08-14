@@ -24,6 +24,7 @@ function blog_add() {
             redirect('/index.php?c=blog&m=list');
         }
     }
+    $data['title'] = 'Thêm bài viết mới';
     $data['template_file'] = 'entry/add.php';
     render('layout.php', $data);
 }
@@ -46,8 +47,34 @@ function blog_single(){
             redirect('/index.php?c=blog&m=single&entry='.$_GET['entry']);
         }
     }
+    //Lấy comment của entry đó
     $data['comments'] = model('comment')->getAllByEntryId($_GET['entry']);
 
     $data['template_file'] = 'entry/public_single.php';
     render('layout.php', $data);
+}
+
+function blog_update(){
+    $data = array();
+    
+    if (isPostRequest()) {
+        $postData = postData();
+        $currentUser = isLogged();
+        if ($currentUser && model('entry')->update($postData, $_GET['entry'])) {
+            redirect('/index.php?c=blog&m=list');
+        }
+    }else{
+        $data['single']=model('entry')->getSingle($_GET['entry']);
+        
+        $data['title'] = 'Chỉnh sửa bài viết';
+        $data['template_file'] = 'entry/add.php';
+        render('layout.php', $data);
+    }
+ }
+
+function blog_delete(){
+    $currentUser = isLogged();
+    if ($currentUser && model('entry')->delete($_GET['entry'])) {
+        redirect('/index.php?c=blog&m=list');
+    }
 }

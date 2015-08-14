@@ -39,8 +39,6 @@
 .form-horizontal .controlls:first-child {
   *padding-left: 0;
 }
-input,
-textarea,
 .comment {
   width: 100%;
 }

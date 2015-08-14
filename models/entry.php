@@ -8,7 +8,7 @@ class Entry extends Model {
         $first_day_this_month = date("Y-m-d", strtotime('first day of this month'));
         $first_day_next_month = date("Y-m-d", strtotime('first day of next month'));
         
-        $sql = "SELECT title, posted_day, concat(substring(content, 1, 150), '...') as content FROM `{$this->table}`
+        $sql = "SELECT id, title, posted_day, concat(substring(content, 1, 100), '...') as content FROM `{$this->table}`
                     WHERE `user_id` = " . intval($user_id) . "
                             AND `posted_day` >= '" . $first_day_this_month  . "'
                             AND `posted_day` < '" . $first_day_next_month  . "'";
@@ -38,5 +38,13 @@ class Entry extends Model {
                 where entrys.id=".esc($entry_id);
 
         return db_get_all($sql);
+    }
+
+    public function update($postData, $entry_id){
+        return db_update($this->table, $postData, 'id='.$entry_id);
+    }
+
+    public function delete($entry_id){
+        return db_delete($this->table, 'id='.$entry_id);
     }
 }

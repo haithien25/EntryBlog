@@ -18,7 +18,13 @@
         <td><?php echo $i; ?></td>
         <td><?php echo $e['title']; ?></td>
         <td><?php echo $e['posted_day']; ?></td>
-        <td><?php echo $e['content']; ?></td>
+        <td>
+            <?php echo $e['content']; ?>
+            <div class="text-right">
+                <button class="btn btn-small btn-primary" onclick="location.href='/index.php?c=blog&m=update&entry=<?php echo $e['id'] ?>';">Update</button>
+                <button class="btn btn-small btn-danger" onclick="location.href='/index.php?c=blog&m=delete&entry=<?php echo $e['id'] ?>';">Delete</button>
+            </div>
+        </td>
     </tr>
     <?php        
         endforeach;

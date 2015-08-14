@@ -1,4 +1,4 @@
-<h3>Thêm bài viết mới</h3>
+<h3><?php echo $title ?></h3>
 
 <?php if (isset($error)): ?>
 <div class="alert alert-error">
@@ -10,20 +10,28 @@
   <div class="control-group">
     <label class="control-label" for="inputTitle">Tiêu đề</label>
     <div class="controls">
-      <input type="text" id="inputTitle" placeholder="Add title.." name="title" />
+      <input type="text" id="inputTitle" placeholder="Add title.." name="title" <?php if($title==='Chỉnh sửa bài viết'){foreach($single as $s):echo 'value="'.$s['title'].'"'; ?> />
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label" for="inputContent">Nội dung</label>
     <div class="controls">
-      <input type="text" id="inputContent" placeholder="Content.." name="content" />
+      <textarea class="comment" rows="15" placeholder="Content.." name="content"><?php echo $s['content'];endforeach;}else{?> />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputContent">Nội dung</label>
+    <div class="controls">
+      <textarea class="comment" rows="15" placeholder="Content.." name="content"><?php } ?></textarea>
     </div>
   </div>
 
   <div class="control-group">
     <div class="controls">
       <button type="submit" class="btn btn-primary">Lưu bài</button>
+      <button type="button" class="btn" onclick="location.href='/index.php?c=blog&m=list'">Hủy</button>
     </div>
   </div>
 </form>
