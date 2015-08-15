@@ -16,5 +16,5 @@ First Blog on GitHub using simple MVC in PHP<br>
 <img src="http://i.imgur.com/pzGZ0jo.png">
 <h2>6. Add an entry</h2>
 <img src="http://i.imgur.com/MNzEjFb.png">
-<h2>Update an entry</h2>
+<h2>7. Update an entry</h2>
 <img src="http://i.imgur.com/ixs25Ug.png">
