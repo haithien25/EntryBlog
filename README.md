@@ -11,3 +11,10 @@ First Blog on GitHub using simple MVC in PHP<br>
 <img src="http://i.imgur.com/wsshtvJ.png">
 <h2>4. Register to be a User</h2>
 <img src="http://i.imgur.com/K2LrXQ7.png">
+<h2>5. Entry manager for User after logged in</h2>
+<p>Each entry can be updated or deleted.</p>
+<img src="http://i.imgur.com/pzGZ0jo.png">
+<h2>6. Add an entry</h2>
+<img src="http://i.imgur.com/MNzEjFb.png">
+<h2>Update an entry</h2>
+<img src="http://i.imgur.com/ixs25Ug.png">
