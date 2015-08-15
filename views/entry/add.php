@@ -15,16 +15,19 @@
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="inputContent">Nội dung</label>
+    <label class="control-label" >Nội dung</label>
     <div class="controls">
       <textarea class="comment" rows="15" placeholder="Content.." name="content"><?php echo $s['content'];endforeach;}else{?> />
     </div>
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="inputContent">Nội dung</label>
+    <label class="control-label">Nội dung</label>
     <div class="controls">
       <textarea class="comment" rows="15" placeholder="Content.." name="content"><?php } ?></textarea>
+      <script>
+          CKEDITOR.replace( "content" );
+      </script>
     </div>
   </div>
 

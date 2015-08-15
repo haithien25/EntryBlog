@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/css/styles.css">
     <script type="text/javascript" src="./styles/js/jquery.js"></script>
+    <script src="./ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
   <div class='container'>
@@ -16,7 +18,7 @@
         </ul>
       </div>
     </div>
-    <div id='content' class='row-fluid'>
+    <div class='row-fluid'>
         <div class='span9 main'>
             <?php include ROOT . DS . 'views' . DS . $template_file; ?>
         </div>
