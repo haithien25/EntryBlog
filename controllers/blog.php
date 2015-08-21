@@ -65,11 +65,10 @@ function blog_update(){
         }
     }else{
         $data['single']=model('entry')->getSingle($_GET['entry']);
-        
-        $data['title'] = 'Chỉnh sửa bài viết';
-        $data['template_file'] = 'entry/add.php';
-        render('layout.php', $data);
     }
+    $data['title'] = 'Chỉnh sửa bài viết';
+    $data['template_file'] = 'entry/add.php';
+    render('layout.php', $data);
  }
 
 function blog_delete(){

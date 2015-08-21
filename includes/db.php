@@ -22,7 +22,6 @@ function db_get_all($sql) {
             $data[] = $row;
         }
     }
-    
     return $data;
 }
 

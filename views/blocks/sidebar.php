@@ -11,4 +11,14 @@
 
 <ul class="nav nav-tabs nav-stacked">
     <li><a href="index.php?c=blog&m=listpublic">Bài đăng gần đây</a></li>
+    <li><a href="index.php?c=book&m=list">Cửa hàng sách</a></li>
+    <li>
+        <a href="/index.php?c=cart&m=list">Giỏ hàng</a>
+        <?php if(isset($_SESSION['cart'])): ?>
+            <span class="posbadge badge badge-warning">
+                <?php echo count($_SESSION['cart']); ?>
+            </span>
+        <?php endif; ?>
+    </li>
+    <li><a href="#">Gì đó</a></li>
 </ul>
