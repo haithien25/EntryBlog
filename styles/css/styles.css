@@ -42,3 +42,17 @@
 .comment {
   width: 100%;
 }
+.row_book{
+  margin-left: 0;
+}
+.book_name{
+  margin-top:15px;
+  height:40px;
+  color:green;
+  font-weight:bold;
+}
+.posbadge{
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 80px;
+}

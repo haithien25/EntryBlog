@@ -3,11 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Entry Blog</title>
-    <link rel="stylesheet" href="./styles/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles/css/styles.css">
-    <script type="text/javascript" src="./styles/js/jquery.js"></script>
-    <script src="./ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="./styles/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../../styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/css/styles.css">
+    <script type="text/javascript" src="../../styles/js/jquery.js"></script>
+    <script src="../../ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../../styles/js/bootstrap.js"></script>
 
 </head>
 <body>
