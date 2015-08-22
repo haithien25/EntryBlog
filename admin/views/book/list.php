@@ -12,14 +12,14 @@
     </div>
 </p>
 <table class="table table-hover">
-    <tr>
+    <thead>
         <th>#</th>
         <th>Tên</th>
         <th>Giá</th>
         <th>Hình</th>
         <th>Mô tả</th>
         <th></th>
-    </tr>
+    </thead>
     <?php
         foreach ($books as $b):
     ?>

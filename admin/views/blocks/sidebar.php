@@ -9,5 +9,6 @@
 </ul>
 
 <ul class="nav nav-tabs nav-stacked">
-    <li><a href="index.php?c=blog&m=listpublic">Đợi chút đi :D</a></li>
+    <li><a href="index.php?c=bill&m=list">Quản lý đơn hàng</a></li>
+    <li><a href="index.php?c=book&m=list">Quản lý sách</a></li>
 </ul>
