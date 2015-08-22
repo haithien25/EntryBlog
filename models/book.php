@@ -29,10 +29,10 @@ class Book extends Model {
     public function getCartList($cart){
         $str="";
         foreach ($cart as $c) {
-            if($c['bookid']==end($cart)['bookid']){
-                $str.=$c['bookid'];
+            if($c['book_id']==end($cart)['book_id']){
+                $str.=$c['book_id'];
             }else{
-                $str.=$c['bookid'].',';
+                $str.=$c['book_id'].',';
             }
         }
         $sql="SELECT id, name, image, price FROM books where id in (".$str.")";

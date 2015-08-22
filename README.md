@@ -31,9 +31,22 @@ First Blog on GitHub using simple MVC in PHP<br>
 <img src="http://i.imgur.com/TaEkCy8.png">
 <h4>Update a book</h4>
 <img src="http://i.imgur.com/lxbdmvl.png">
+<h4>Bill manager for Admin</h4>
+<img src="http://i.imgur.com/fmFbK5K.png">
+<h4>Bill's detail</h4>
+<p>Bill's status can be updated.</p>
+<img src="http://i.imgur.com/Mg7Mv25.png">
+
+<h3>User:</h3>
 <h4>BookStore for User</h4>
 <img src="http://i.imgur.com/1dUeoz0.png">
 <h4>Add a book to Cart</h4>
 <img src="http://i.imgur.com/SWn5UYW.png">
 <h4>Book Cart</h4>
 <img src="http://i.imgur.com/GwnpqzM.png">
+<h4>Submit to send Bill</h4>
+<img src="http://i.imgur.com/4J3FpwB.png">
+<h4>View Your Booked Bill</h4>
+<img src="http://i.imgur.com/EOhUqqw.png">
+<h4>Each Bill's detail</h4>
+<img src="http://i.imgur.com/fVFItNA.png">

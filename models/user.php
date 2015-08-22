@@ -36,4 +36,8 @@ class User extends Model {
         unset($_SESSION['logged']);
         session_destroy();
     }
+
+    public function update($postData, $email){
+        return db_update($this->table, $postData, "email='".$email."'");
+    }
 }

@@ -25,12 +25,12 @@
 			<td><?php echo $m['name']; ?></td>
 			<td><output id="bookPrice<?php echo $i ?>"><?php echo number_format($m['price'], 0, ',', '.'); ?></output></td>
 			<td>
-				<input name="bookid<?php echo $i ?>" type="hidden" value="<?php echo $m['bookid'] ?>"/>
+				<input name="bookid<?php echo $i ?>" type="hidden" value="<?php echo $m['book_id'] ?>"/>
 				<input name="quantity<?php echo $i ?>" id="quantity<?php echo $i ?>" type="number" class="input-mini" onchange="calculateTotal<?php echo $i ?>()" onkeyup="calculateTotal<?php echo $i ?>()" value="<?php echo $m['quantity']; ?>" />
 			</td>
 			<td>
 				<output id="total<?php echo $i ?>" ><?php echo number_format($m['price']*$m['quantity'], 0, ',', '.'); ?></output><br><br>
-				<a href="/index.php?c=cart&m=delete&id=<?php echo $m['bookid'] ?>"><img src="images/deleteIcon.jpg" /></a>
+				<a href="/index.php?c=cart&m=delete&id=<?php echo $m['book_id'] ?>"><img src="images/deleteIcon.jpg" /></a>
 			</td>
 		</tr>
 	

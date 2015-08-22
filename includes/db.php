@@ -47,7 +47,6 @@ function db_update($table, $data, $where) {
     
     $sql = "UPDATE `{$table}` SET "  . implode(", ", $sets) . " WHERE {$where}";
     mysql_query($sql);
-    
     return mysql_affected_rows();
 }
 

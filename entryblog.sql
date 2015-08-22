@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2015 at 08:31 AM
+-- Generation Time: Aug 22, 2015 at 09:28 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -49,11 +49,21 @@ INSERT INTO `admins` (`username`, `password`) VALUES
 CREATE TABLE IF NOT EXISTS `bills` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `booked_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` varchar(15) NOT NULL,
+  `status` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `user_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_bill_of_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`id`, `booked_date`, `status`, `user_id`) VALUES
+(9, '2015-08-21 20:35:55', 'Đang giao hàng', 1),
+(10, '2015-08-21 20:46:11', 'Hủy', 2),
+(12, '2015-08-22 15:29:45', 'Chờ duyệt', 2),
+(13, '2015-08-22 15:48:29', 'Đã giao hàng', 2);
 
 -- --------------------------------------------------------
 
@@ -68,6 +78,21 @@ CREATE TABLE IF NOT EXISTS `bill_details` (
   KEY `fk_details_of_bill` (`bill_id`),
   KEY `fk_book_booked` (`book_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bill_details`
+--
+
+INSERT INTO `bill_details` (`bill_id`, `book_id`, `quantity`) VALUES
+(9, 28, 1),
+(9, 29, 1),
+(10, 19, 3),
+(10, 20, 1),
+(10, 21, 1),
+(12, 27, 3),
+(12, 26, 3),
+(13, 28, 3),
+(13, 29, 2);
 
 -- --------------------------------------------------------
 
@@ -188,8 +213,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`, `phone`, `address`) VALUES
-(1, 'daisy_only2005@yahoo.com.vn', '32aac12270d73c8c8d9171dd7a7f8b52', 'Huynh Truc Quyen', NULL, NULL),
-(2, 'tester01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Tester', NULL, NULL);
+(1, 'daisy_only2005@yahoo.com.vn', '32aac12270d73c8c8d9171dd7a7f8b52', 'Huynh Truc Quyen', '0123456789', '123 Trần Hưng Đạo'),
+(2, 'tester01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Tester', '0123654987', '10 Hàm Nghi, q1');
 
 --
 -- Constraints for dumped tables

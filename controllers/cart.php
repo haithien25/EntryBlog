@@ -24,7 +24,7 @@ function cart_list(){
 		$merge=array();
 		foreach ($data['cart'] as $cart) {
 			foreach ($fromDB as $value) {
-				if(intval($value['id'])==$cart['bookid']){
+				if(intval($value['id'])==$cart['book_id']){
 					$merge[]=array_merge($cart, $value);
 				}
 			}
@@ -32,27 +32,25 @@ function cart_list(){
 		//var_dump($merge);
 		$data['merge']=$merge;
 	}
-	$data['template_file'] = 'cart/list.php';
-	render('layout.php', $data);
-}
-/*
-function submitCart($cart){
+	//Submit cart
 	if (isPostRequest()) {
         $postData = postData();
-        for($i=1; $i<=count($_SESSION['cart']; $i++){
+        for($i=1; $i<=count($_SESSION['cart']); $i++){
         	foreach ($_SESSION['cart'] as $key => $cart) {
-        		if($postData['bookid'.$i]==$cart['bookid']){
+        		if($postData['bookid'.$i]==$cart['book_id']){
         			$_SESSION['cart'][$key]['quantity']=$postData['quantity'.$i];
         		}
         	}
         }
-        redirect('index.php?c=bill&m=cart');
+        redirect('index.php?c=bill&m=view');
     }
+	$data['template_file'] = 'cart/list.php';
+	render('layout.php', $data);
 }
-*/
+
 function cart_delete(){
 	foreach ($_SESSION['cart'] as $key => $cart) {
-		if($cart['bookid']==$_GET['id']){
+		if($cart['book_id']==$_GET['id']){
 			unset($_SESSION['cart'][$key]);
 			if(count($_SESSION['cart'])==0)
 				unset($_SESSION['cart']);

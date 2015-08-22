@@ -24,12 +24,12 @@ function book_list() {
             $data['info'] = 'Số lượng không đúng!';
         }
         else if(!isset($_SESSION['cart'])){
-            $_SESSION['cart'][0]=array('bookid' => $id,
+            $_SESSION['cart'][0]=array('book_id' => $id,
                                     'quantity' => $quantity);
         }else{
             $flag=false;
             foreach ($_SESSION['cart'] as $cart) {
-                if($cart['bookid']===$id){
+                if($cart['book_id']===$id){
                     //$cart['quantity'] += $quantity;
                     $flag=true;
                     $data['info'] = 'Sách này đã có trong giỏ hàng!';
@@ -37,7 +37,7 @@ function book_list() {
                 }
             }
             if($flag==false){
-                $_SESSION['cart'][]=array('bookid' => $id,
+                $_SESSION['cart'][]=array('book_id' => $id,
                                     'quantity' => $quantity);
 
                 $data['info'] = 'Thêm sách vào giỏ hàng thành công!';
